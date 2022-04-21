@@ -1,3 +1,4 @@
+// List of Pokemons and their attributes
 let pokemonList = [{
     name: 'Zacian',
     height: 9,
@@ -48,4 +49,14 @@ let pokemonList = [{
     }
 ];
 
-document.write(pokemonList);
+
+// Loop for list of Pokemons on page
+
+for (let i =0; i < pokemonList.length; i++) {
+    document.write("Name: " + pokemonList[i].name) + ("Height: " + pokemonList[i].height + ".");
+    document.write("Category: " + pokemonList[i].category);
+    document.write("Type: " + pokemonList[i].type[i]);
+    document.write("Ability: " + pokemonList[i].abilities[i]);
+    document.write("Weakness: " + pokemonList[i].weaknesses[i]);
+};
+
