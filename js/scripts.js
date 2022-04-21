@@ -53,7 +53,7 @@ let pokemonList = [{
 // Loop for list of Pokemons on page
 
 for (let i =0; i < pokemonList.length; i++) {
-    document.write("Name: " + pokemonList[i].name) + ("Height: " + pokemonList[i].height + ".");
+    document.write("Name: " + pokemonList[i].name + " ("Height: " + pokemonList[i].height + ".");
     document.write("Category: " + pokemonList[i].category);
     document.write("Type: " + pokemonList[i].type[i]);
     document.write("Ability: " + pokemonList[i].abilities[i]);
