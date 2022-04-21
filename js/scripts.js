@@ -1,8 +1,6 @@
-let pokemonList = [];
-
-let pokemons = [{
+let pokemonList = [{
     name: 'Zacian',
-    height= 9,
+    height: 9,
     category: 'Warrior',
     type: 'Fairy',
     abilities: 'Intrepid Sword',
@@ -10,7 +8,7 @@ let pokemons = [{
     },
     {
     name: 'Grimmsnarl', 
-    height= 4, 
+    height: 4, 
     category: 'Bulk Up', 
     type: ['Dark', 'Fairy'], 
     abilities: ['Frisk', 'Prankster'], 
@@ -18,7 +16,7 @@ let pokemons = [{
     },
     {
     name: 'Eisue', 
-    height= 4, 
+    height: 4, 
     category: 'Penguin', 
     type: 'Ice', 
     abilities: 'Ice Face', 
@@ -26,7 +24,7 @@ let pokemons = [{
     },
     {
     name: 'Centiskorch', 
-    height= 9, 
+    height: 9, 
     category: 'Radiator', 
     type: ['Fire', 'Bug'], 
     abilities: ['Flash Fire', 'White Smoke'], 
@@ -34,7 +32,7 @@ let pokemons = [{
     },
     {
     name: 'Silicobra', 
-    height= 7, 
+    height: 7, 
     category: 'Sand Snake', 
     type: 'Ground', 
     abilities: ['Shed Skin', 'Sand Spit'], 
@@ -42,10 +40,12 @@ let pokemons = [{
     },
     {
     name: 'Drednaw', 
-    height= 3, 
+    height: 3, 
     category: 'Bite', 
     type: ['Water', 'Rock'], 
     abilities: ['Shell Armor', 'Strong Jaw'], 
     weaknesses: ['Grass', 'Electric', 'Fighting', 'Ground']
     }
 ];
+
+document.write(pokemonList);
