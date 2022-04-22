@@ -52,11 +52,12 @@ let pokemonList = [{
 
 // Loop for list of Pokemons on page
 
-for (let i =0; i < pokemonList.length; i++) {
-    document.write("Name: " + pokemonList[i].name + " ("Height: " + pokemonList[i].height + ".");
+for (let i = 0; i < pokemonList.length; i++) {
+    if (pokemonList[i].height > 1) {
+        document.write("Name: " + pokemonList[i].name + " (Height: " + pokemonList[i].height + ")" + "Wow he's big!")};
     document.write("Category: " + pokemonList[i].category);
-    document.write("Type: " + pokemonList[i].type[i]);
-    document.write("Ability: " + pokemonList[i].abilities[i]);
-    document.write("Weakness: " + pokemonList[i].weaknesses[i]);
+    document.write("Type: " + pokemonList[i].type);
+    document.write("Ability: " + pokemonList[i].abilities);
+    document.write("Weakness: " + pokemonList[i].weaknesses);
 };
 
