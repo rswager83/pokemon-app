@@ -1,30 +1,57 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pokemon App</title>
-        <link rel="shortcut icon" href="./img/favicon/picachu.favicon.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="img/favicon/picachu_favicon.png" type="image/x-icon"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Gloria+Hallelujah&family=Indie+Flower&family=Lobster+Two&display=swap" rel="stylesheet">
-        <link ref="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
-    <body>
+    
+    <body class="body-index">
         <header>
-            <h1>"The important thing is not how long you live. It’s what you accomplish with your life."</h1>
-        </header>   
+            <div class="page-header">
+                <h1 class="logo">Swag Dog Web Development</h1>
+                <nav class="main-nav-header">
+                    <ul role="menubar">
+                        <li role="presentation" class="navigation-list">
+                            <a href="index.html" role="menuitem" class="navigation-list_item">Main Page</a>
+                        <li role="presentation" class="navigation-list">
+                            <a href="about.html" role="menuitem" class="navigation-list_item">About Me</a>
+                        </li>
+                        <li role="presentation" class="navigation-list">
+                            <a href="contact.html" role="menuitem" class="navigation-list_item">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
         <main>
 
+            <div class="index-grid">
+                <img src="img/pic2.png" alt="Pokemon Image">
+                <h1>"The important thing is not how long you live. It’s what you accomplish with your life."</h1>
+            </div>
+               
         </main>
+        
+        <script src="js/scripts.js"></script>
 
-        <footer>
-
+        <footer class="page-footer">
+            <p><u>Find me on:</u></p>
+            <nav class="social-media">
+               <img src="img/svg/github_logo.svg" alt="Github">
+               <img src="img/svg/linkedin_logo.svg" alt="LinkedIn">
+            </nav>
         </footer>
 
-        <script src="js/scripts.js"></script>
-    
     </body>
 
 </html>
