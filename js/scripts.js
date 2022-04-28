@@ -1,9 +1,7 @@
-// Added IIFE to avoid accessing the global state
-
+    // Adding IIFE to avoid accessing the global state
 let pokemonRepository= (function(){
 
-// List of Pokemons and their attributes
-    
+    // List of Pokemons and their attributes
 let pokemonList = [
         {
         name: 'Zacian',
@@ -55,42 +53,55 @@ let pokemonList = [
         }
     ];
 
-    //Defining add function to add pokemon to list
-
+        //Defining add function to add pokemon to list
     function add(pokemon){
         pokemonList.push(pokemon);
     }
 
-    //Defining getAll function to return pokemonList
-    
+        //Defining getAll function to return pokemonList
     function getAll(){
         return pokemonList;
     }
 
-    //returning getAll and add functions
-    
-    return{
-        add:add,
-        getAll:getAll
+    function addListItem(pokemon) {
+            // Creating variables
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listPokemon = document.createElement('li');
+        let button = document.createElement('button');
+            // Adding features and format to buttons
+        button.innerText = pokemon.name;
+        button.classList.add('button-class');
+            // DOM hierarchy
+        listPokemon.appendChild(button);
+        pokemonList.appendChild(listPokemon);          
+        addListener(button, pokemon);
     }
 
+         // Adding event listener to the created button to listen to a click!! // 
+    function addListener (button, pokemon) {
+        button.addEventListener('click', function() {
+          showDetails(pokemon.name);
+        });
+    }
 
+        // Function for click
+    function showDetails(pokemon) {
+        console.log(pokemon);
+    }
+
+        // Returning getAll and add functions
+    return{
+        add:add,
+        getAll:getAll,
+        addListItem:addListItem,
+        showDetails:showDetails
+    }
 })();
 
 pokemonRepository.add({ name: 'Pikachu', height: 3, category: 'mouse', type: 'electric', abilities: 'static', weaknesses: 'ground'});
 console.log(pokemonRepository.getAll());
 
-// forEach Loop for name and height
-
+    // forEach Loop for name and height
 pokemonRepository.getAll().forEach(function(pokemon) {
-    // console.log(pokemon.name + ' is ' + pokemon.height + ' feet tall.');
-    // document.write(pokemon.name + ' is a type ' + pokemon.type + " pokemon and is " + pokemon.height + ' feet tall.');
-   
-    if (pokemon.height < 4 ) {
-        document.write('<p><b> Name:</b> ' + pokemon.name + ' (Height: ' + pokemon.height + ') is a ' + pokemon.type + " type and he's tiny!</p>It is a "
-        + pokemon.category + ' and has ' + pokemon.abilities + ' abilities and has ' + pokemon.weaknesses + ' weaknesses.');
-    }else{
-        document.write('<p><b> Name:</b> ' + pokemon.name + ' (Height: ' + pokemon.height + ') is a ' + pokemon.type + ' type.</p>It is a '
-        + pokemon.category + ' and has ' + pokemon.abilities + ' abilities and has ' + pokemon.weaknesses + ' weaknesses.');}
-        document.write("<br>");
+   pokemonRepository.addListItem(pokemon);
 });
