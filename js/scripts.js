@@ -1,3 +1,16 @@
+ function showLoadingMessage() {
+    let loadingMessage = document.querySelector('.hidden-message');
+    loadingMessage.classList.add('display');
+    setTimeout(() => {
+        loadingMessage.classList.remove('display');
+    }, 5000);
+ };
+
+ function hideLoadingMessage() {
+    let loadingMessage = document.querySelector('.hidden-message');
+    loadingMessage.classList.remove('display');
+ };
+    
     // Adding IIFE to avoid accessing the global state
 let pokemonRepository= (function(){
 
@@ -48,6 +61,7 @@ let pokemonRepository= (function(){
     }
 
     function loadList() {
+        showLoadingMessage();
         return fetch(apiUrl).then(function (response){
             return response.json();
         }).then(function(json){
@@ -57,13 +71,16 @@ let pokemonRepository= (function(){
                     detailsUrl: item.url,
                 };
                 add(pokemon);
+                hideLoadingMessage();
             });
         }).catch(function (e) {
+            hideLoadingMessage();
             console.error(e);
         })
     }
 
     function loadDetails(item) {
+        showLoadingMessage();
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
             return response.json();
@@ -72,7 +89,9 @@ let pokemonRepository= (function(){
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
             item.types = details.types;
+            hideLoadingMessage();
         }).catch(function (e) {
+            hideLoadingMessage();
             console.error(e);
         });
     }
@@ -95,11 +114,9 @@ let pokemonRepository= (function(){
     }
 })();
 
+// list all pokemon from API
 pokemonRepository.loadList().then(function() {
-    // forEach Loop for name and height
     pokemonRepository.getAll().forEach(function(pokemon) {
         pokemonRepository.addListItem(pokemon);
     });
 });
-
- 

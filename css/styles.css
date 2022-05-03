@@ -108,6 +108,9 @@ ol[role=""] {
     margin: 10px;
 }
 
+.hidden-message {
+   display: none; 
+}
 
 /* page footer  */
 
