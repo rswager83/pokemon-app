@@ -1,4 +1,4 @@
-:root{
+/* :root{
     margin:0;
     color: blue;
 }
@@ -11,25 +11,25 @@
 }
 
 /* link */
-a {
+/* a {
     color: black;
     transition-duration: .2s;
     transition-property: opacity;
-}
+} */
 
 a:hover, a:focus {
-    color: blue;
-    text-decoration: none; /*no underline when hovering a link*/
+    /* color: blue; */
+    /* text-decoration: none; no underline when hovering a link */
 }
 
 
-body {
+/* body {
     margin: 0;
     min-height: 100%;
     margin-top: auto; /*used for footer to stay at bottom of screen*/
-    display: flex; /*used for footer to stay at bottom of screen*/
-    flex-direction: column; /*used for footer to stay at bottom of screen*/
-}
+    /* display: flex; used for footer to stay at bottom of screen */
+    /* flex-direction: column; used for footer to stay at bottom of screen */
+/* } 
 
 h1 {
     color: blue;
@@ -42,39 +42,39 @@ ol[role=""] {
 } */
 
 
-.body-index {
+/.body-index {
     background-color: rgb(243, 243, 17);
     /* Set rules to fill background */
-    min-height: 100%;
-    min-width: 1024px;
+    /* min-height: 100%;
+    min-width: 1024px; */
     /* set up proportionate scaling  */
-    width: 100%;
-    height: auto;
+    /* width: 100%;
+    height: auto; */
     /*Set up positioning*/
     /* position: fixed; */
-    top: 0;
-    left: 0;    
-}
+    /* top: 0;
+    left: 0;     */
+} 
 
-.logo {
+/* .logo {
     float: left;
     padding: 10px 0;
     margin-right: 10px;
     color: black;
-}
+} */
 
 /* main nav */
-.page-header {
+/* .page-header {
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto; */
     /* background-color: teal;  */
     /* border: 2px solid red;*/
 
-}
+/* } */
 
 /* Fix nav bar due to logo float left and nav float right. Without then not proberly displayed */
-.page-header::after {
-    content: '';
+/* .page-header::after { */
+    /* content: '';
     display: table;
     clear: both;
 }
@@ -87,19 +87,19 @@ ol[role=""] {
     margin: 0;
     padding: 0;
     list-style: none; /*dots go away*/
-}
+/* } */
 
-.main-nav-header li {
+/* .main-nav-header li {
     display: inline-block;
     margin-left: 70px; /*space between links, can use zb margin: 0 35px;*/
-    padding-top: 45px; /*pushes links down from top; */
-    position: relative;
-    color:#000;
-}
+    /* padding-top: 45px; pushes links down from top; */
+    /* position: relative;
+    color:#000; */
+/* }  */
 
 /* body */
 
-.index-grid {
+/* .index-grid {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: repeat(2,auto);
@@ -110,19 +110,96 @@ ol[role=""] {
 
 .hidden-message {
    display: none; 
-}
+} */
 
 /* page footer  */
 
-.page-footer {
+/* .page-footer {
     clear: both;
     display: flex;
     flex-direction: column;
     text-align: center;
     font-size: 20px;
     margin-top: auto; /*used to keep footer fixed on the bottom*/
+/* } */
+
+/* .social-media {
+    padding-bottom: 10px;
 }
 
-.social-media {
-    padding-bottom: 10px;
+.button-pokemon {
+    display: none;
+}
+
+#modal-container.is-visible {
+    display: block; 
+}
+
+#modal-container {
+    display: none;
+} */ 
+
+html, 
+body {
+  font-family: Arial, sans-serif;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  
+  /* to show it above other content */
+  z-index: 999; 
+  
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto; 
+  
+  /* this is used to center the modal */
+  /* display: grid; */
+  text-align: center;
+  display: block;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}
+
+.modal h1 {
+  margin-top: 0;
+}
+
+.modal p {
+  margin-bottom: 0;
+}
+
+.button-class {
+    width: 100%;
+    height: 3rem;
+    background-color: green;
 }
