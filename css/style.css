@@ -1,0 +1,23 @@
+html, body {
+    background-color: rgb(243, 243, 17);
+    min-height: 100%;
+}
+
+
+.page-container {
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.container {
+    background-color: rgb(243, 243, 17);
+}
+
+.footer-container {
+    margin-bottom: 50px;
+}
+
+.social-media {
+    padding-left: 2px;
+    padding-right: 2px;
+}
