@@ -33,9 +33,10 @@ let pokemonRepository= (function(){
         let button = document.createElement("button");
             // Adding features and format to buttons
         button.innerText = pokemon.name;
-        // button.classList.add('button-class');
+        button.classList.add("btn-primary", "search-button");
         button.setAttribute("data-toggle", "modal");   
         button.setAttribute("data-target", "#pokemonModal"); 
+        listPokemon.append(button);
         button.addEventListener("click", function(event){
             showDetails(pokemon);
             event.target.blur();
@@ -47,11 +48,11 @@ let pokemonRepository= (function(){
     }
 
          // Adding event listener to the created button to listen to a click!! // 
-    function addListener (button, pokemon) {
-        button.addEventListener('click', function() {
-          showDetails(pokemon.name);
-        });
-    }
+    // function addListener (button, pokemon) {
+    //     button.addEventListener('click', function() {
+    //       showDetails(pokemon.name);
+    //     });
+    // }
 
     function loadList() {
         return fetch(apiUrl).then(function (response){
@@ -90,17 +91,17 @@ let pokemonRepository= (function(){
     }
 
        // Function for click
-    function showDetails(pokemon) {
-        loadDetails(pokemon).then(function() {
+    function showDetails(item) {
+        loadDetails(item).then(function() {
         // console.log(pokemon);
-        showModal(pokemon);
+        showModal(item);
         });
     }
 
     function showModal(pokemon) {
         let modalBody = $(".modal-body");
         let modalTitle = $(".modal-title");
-        let modalHeader = $(".modal-header");
+        // let modalHeader = $(".modal-header");
 
         // clear existing content of modal
         // modalHeader.empty();
@@ -108,37 +109,38 @@ let pokemonRepository= (function(){
         modalBody.empty();
 
         // Creating element for name in modal content
-        let pokemonName = $("<h1>" + item.name + "</h1>");
+        let pokemonName = $("<h1>" + pokemon.name + "</h1>");
         // creating img in modal content
-        let pokemonImage = $('<img class="modal-img" style="width:50%>');
-        imageElement.attr("src", item.imageUrl);
+        let imageElement = $('<img class="modal-img" style="width:50%>');
+        imageElement.attr("src", pokemon.imageUrl);
         // Creating element for height in modal content
-        let pokemonHeight = $("<p>" + "Height: " + item.height + "</p>");
+        let heightElement = $("<p>" + "Height: " + pokemon.height + "</p>");
         // Creating element for weight in modal content
-        // let pokemonWeight = $("<p>" + "Weight: " + item.weight + "</p>");
+        // let weightElement = $("<p>" + "Weight: " + item.weight + "</p>");
         // Creating element for type in modal content
         // let pokemonTypes = $("<p>" + "Types: " + item.type + "</p>");
         // Creating element for abilities in modal content
         // let pokemonAbilities = $("<p>" + "Abilities: " + item.abilities + "</p>");
 
         modalTitle.append(pokemonName);
-        modalBody.append(pokemonImage);
-        modalBody.append(pokemonHeight);
+        modalBody.append(imageElement);
+        modalBody.append(heightElement);
+        // modalBody.append(weightElement);
         // modalBody.append(pokemonWeight);
         // modalBody.append(pokemonTypes);
         // modalBody.append(pokemonAbilities);
-    }
+    
             
-        let pokemonName = document.createElement("h1");
-        pokemonName.innerText = pokemon.name;
+        // let pokemonName = document.createElement("h1");
+        // pokemonName.innerText = pokemon.name;
 
-        let pokemonImage = document.createElement("img");
-        pokemonImage.classList.add("modal-img");
-        pokemonImage.src = pokemon.imageUrl;
+        // let pokemonImage = document.createElement("img");
+        // pokemonImage.classList.add("modal-img");
+        // pokemonImage.src = pokemon.imageUrl;
 
-        let pokemonHeight = document.createElement("p");
-        pokemonHeight.innerText = "Height: " + pokemon.height;
-
+        // let pokemonHeight = document.createElement("p");
+        // pokemonHeight.innerText = "Height: " + pokemon.height;
+    }
 
         // Returning getAll and add functions
     return{
