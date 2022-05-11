@@ -5,15 +5,15 @@ let pokemonRepository= (function(){
     let pokemonList = [];
 
     // Pokemon database
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=15';
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=10';
 
     let modalContainer = document.querySelector('#modal-container');
 
         //Defining add function to add pokemon to list
     function add(pokemon){
-        if(typeof pokemon === 'object' && 'name' in pokemon) {
-            pokemonList.push(pokemon);
-        }
+        // if(typeof pokemon === 'object' && 'name' in pokemon) {
+        //     pokemonList.push(pokemon);
+        // }
         if(pokemon.name && pokemon.detailsUrl) {
             pokemonList.push(pokemon);
         } else {
@@ -83,7 +83,7 @@ let pokemonRepository= (function(){
             item.types = details.types;
         })
         .catch(function (e) {
-            console.log.error(eS);
+            console.log.error(e);
         });
     }
 
@@ -105,7 +105,7 @@ let pokemonRepository= (function(){
         // // Add the new modal content (close button)
         let closeButtonElement = document.createElement('button');
         closeButtonElement.classList.add('modal-close');
-        closeButtonElement.innterText = 'Close';
+        closeButtonElement.innerText = 'close';
         // // Required to close from the close button on modal
         closeButtonElement.addEventListener('click', hideModal);
             
@@ -113,6 +113,7 @@ let pokemonRepository= (function(){
         pokemonName.innerText = pokemon.name;
 
         let pokemonImage = document.createElement('img');
+        pokemonImage.classList.add('modal-img');
         pokemonImage.src = pokemon.imageUrl;
 
         let pokemonHeight = document.createElement('p');
@@ -120,12 +121,13 @@ let pokemonRepository= (function(){
 
         // let contentElement = document.createElement('div'); // Use to add something to modal
         // contentElement.classList.add('modal-text');
-
-        modal.appendChild(pokemonName);
-        modal.appendChild(closeButtonElement);
         // modal.appendChild(contentElement); // Use to add something to modal
-        modal.appendChild(pokemonImage);
+        modal.appendChild(pokemonName);
         modal.appendChild(pokemonHeight);
+        
+        
+        modal.appendChild(pokemonImage);
+        modal.appendChild(closeButtonElement);
         modalContainer.appendChild(modal);
 
         modalContainer.classList.add('is-visible');
