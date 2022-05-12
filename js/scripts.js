@@ -27,24 +27,24 @@ let pokemonRepository= (function(){
 
     function addListItem(pokemon) {
             // Creating variables
-        let pokedex = document.querySelector(".pokemon-list");
+        // let pokedex = document.querySelector(".pokemon-list");
+        let pokemonList = document.querySelector(".pokemon-list");
         let listPokemon = document.createElement("li");
-        listPokemon.classList.add("list-group-item");
+        listPokemon.classList.add("group-list-item");
         let button = document.createElement("button");
             // Adding features and format to buttons
         button.innerText = pokemon.name;
-        button.classList.add("btn-primary", "search-button");
+        button.classList.add("btn", "btn-primary", "search-button");
         button.setAttribute("data-toggle", "modal");   
         button.setAttribute("data-target", "#pokemonModal"); 
         listPokemon.append(button);
+        listPokemon.append(button);
+        pokemonList.append(listPokemon);
         button.addEventListener("click", function(event){
             showDetails(pokemon);
             event.target.blur();
         });
         
-        // DOM hierarchy
-        listPokemon.appendChild(button);
-        pokedex.appendChild(listPokemon);
     }
 
          // Adding event listener to the created button to listen to a click!! // 
@@ -81,9 +81,9 @@ let pokemonRepository= (function(){
             // Now we add the details to the item
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
-            item.weight = details.weight;
-            item.types = details.types;
-            item.abilities = details.abilities;
+            // item.weight = details.weight;
+            // item.types = details.types;
+            // item.abilities = details.abilities;
         })
         .catch(function (e) {
             console.log.error(e);
@@ -101,7 +101,7 @@ let pokemonRepository= (function(){
     function showModal(pokemon) {
         let modalBody = $(".modal-body");
         let modalTitle = $(".modal-title");
-        // let modalHeader = $(".modal-header");
+        let modalHeader = $(".modal-header");
 
         // clear existing content of modal
         // modalHeader.empty();
