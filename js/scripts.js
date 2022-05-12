@@ -5,7 +5,7 @@ let pokemonRepository= (function(){
     let pokemonList = [];
 
     // Pokemon database
-    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=10";
+    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=30";
 
     let modalContainer = document.querySelector("#modal-container");
 
@@ -27,22 +27,19 @@ let pokemonRepository= (function(){
 
     function addListItem(pokemon) {
             // Creating variables
-        // let pokedex = document.querySelector(".pokemon-list");
         let pokemonList = document.querySelector(".pokemon-list");
         let listPokemon = document.createElement("li");
         listPokemon.classList.add("group-list-item");
         let button = document.createElement("button");
             // Adding features and format to buttons
         button.innerText = pokemon.name;
-        button.classList.add("btn", "btn-primary", "search-button");
+        button.classList.add("btn-primary", "search-button");
         button.setAttribute("data-toggle", "modal");   
         button.setAttribute("data-target", "#pokemonModal"); 
-        listPokemon.append(button);
         listPokemon.append(button);
         pokemonList.append(listPokemon);
         button.addEventListener("click", function(event){
             showDetails(pokemon);
-            event.target.blur();
         });
         
     }
@@ -108,7 +105,7 @@ let pokemonRepository= (function(){
         modalTitle.empty();
         modalBody.empty();
 
-        // Creating element for name in modal content
+        // Creating element name in modal content
         let pokemonName = $("<h1>" + pokemon.name + "</h1>");
         // creating img in modal content
         let imageElement = $('<img class="modal-img" style="width:50%>');
