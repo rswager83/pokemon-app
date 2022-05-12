@@ -27,6 +27,7 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                 </form>
+                <div class="sr-only"></div>
             </nav>  
          
             <div class="container page-container">
@@ -56,25 +57,24 @@
                 </div>
             </div>
 
-            <div class="container id=modal-container">
+            <div class="container" id="modal-container">
                 <div class="row">
                     <div class="col">
-                        <ul class="pokemon-list list-unstyled" data-toggle="modal" data-target="#pokemonModal"></ul>
+                        <ul class="list-group pokemon-list list-unstyled flex-row flex-wrap w-100" data-toggle="modal" data-target="#pokemonModal"></ul>
+
+                        <div class="modal fade" id="pokemonModel" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="sr-only">Pokemon information</div>
+                                <div class="modal-header"></div>
+                                <h5 class="modal-title" id="pokemonModalLabel"></h5>
+                                <div class="modal-body"></div> 
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>  
                     </div>
-                </div>
-            </div>
-            <div class="modal fade" id="pokemonModel" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">  
-                            <h5 class="modal-title" id="pokemonModalLabel"></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                        </div> 
-                    </div>  
                 </div>
             </div>
         </main>       
@@ -108,3 +108,24 @@
     </body>
 
 </html>
+
+<!-- <div class="container" id="modal-container">
+    <div class="row">
+        <div class="col">
+            <ul class="list-group pokemon-list list-unstyled flex-row flex-wrap w-100" data-toggle="modal" data-target="#pokemonModal"></ul>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="pokemonModel" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">  
+                <h5 class="modal-title" id="pokemonModalLabel"></h5>
+                <div class="modal-body"></div> 
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>  
+    </div>
+</div> -->
