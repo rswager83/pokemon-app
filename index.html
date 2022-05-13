@@ -18,10 +18,10 @@
     
     <body class="d-flex flex-column min-vh-100">
         <header class="header">
-                        
-            <nav class="navbar fixed-top navbar-light bg-light">
+                        <!-- Navbar -->
+            <nav class="navbar fixed-top navbar-light" style="font-family: Gloria Hallelujah" background-color: rgb(243, 243, 17);">
                 <a class="navbar-brand" href="#">
-                    <img src="img/icon.png" width="#" height="#" class="d=inline-block align-top mr-sm-3" alt="logo">Pokemon App
+                    <img src="img/icon.png" width="#" height="#" class="d=inline-block align-top mr-sm-4" alt="logo">Pokemon App
                 </a>
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -29,66 +29,59 @@
                 </form>
                 <div class="sr-only"></div>
             </nav>  
-         
-            <div class="container page-container">
-                <div class="row">
-                    <img class="col-1 img-fluid" src="img/svg/mew.svg" alt="mew">
-                    <img class="col-1 img-fluid" src="img/svg/pidgey.svg" alt="pidgey">
-                    <img class="col-1 img-fluid" src="img/svg/pikachu.svg" alt="pikachu">
-                    <h1 class="col-6 text-center">Gotta catch 'em all!!! </h1>
-                    <img class="col-1 img-fluid" src="img/svg/psyduck.svg" alt="psyduck">
-                    <img class="col-1 img-fluid" src="img/svg/rattata.svg" alt="rattata">
-                    <img class="col-1 img-fluid" src="img/svg/snorlax.svg" alt="snorlax">
-                </div>
-            </div>
 
         </header>
 
-        <main>
+        <main class="page-container">
             <div class="container">
-                <div class="row justify-content-around">
-                    <img class="col-3 img-fluid" src="img/pic2.png" alt="Pokemon Image">
-                    <h1 class="col-4 display-1 align-self-center">Pokedex</h1>
-                    <img class="col-3 img-fluid ml-md-4" src="img/squirtle.png" alt="Pokemon Image">
+                <div class="row justify-content-around mb-3">
+                    <img class="col-3 img-fluid d-none d-sm-block" src="img/pic2.png" alt="Pokemon Image">
+                    <h1 class="col-sm-4 col-md-3 col-lg-2 align-self-center" style="font-family: Gloria Hallelujah">Pokedex</h1>
+                    <img class="col-3 img-fluid d-none d-sm-block" src="img/squirtle.png" alt="Pokemon Image">
                 </div>
 
                 <div class="row">                  
                     <ul class=" col-3 list-group list-unstyled"></ul>  
                 </div>
             </div>
-
+                <!-- Use to trigger modal -->
             <div class="container" id="modal-container">
                 <div class="row">
                     <div class="col">
-                        <ul class="list-group pokemon-list list-unstyled flex-row flex-wrap w-100" data-toggle="modal" data-target="#pokemonModal"></ul>
-
-                        <div class="modal fade" id="pokemonModel" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                            <div class="sr-only">Pokemon information</div>
-                                <div class="modal-header"></div>
-                                <h5 class="modal-title" id="pokemonModalLabel"></h5>
-                                <div class="modal-body"></div> 
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>  
+                        <ul class="list-group pokemon-list list-unstyled flex-row flex-wrap justify-content-around" data-toggle="modal" data-target="#pokemonModal"></ul>
+                        <div class="sr-only">Pokemon list</div>
+                    </div>
+                </div>
+            </div>
+                 <!-- Modal -->
+            <div class="modal fade" id="pokemonModal" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content text-center">
+                    <div class="sr-only">Pokemon information</div>
+                        <div class="modal-header align-middle">
+                            <u><h5 class="modal-title" id="pokemonModalLabel"></h5></u>
+                        </div>
+                        <div class="modal-body">...</div> 
+                        <div class="modal-footer border-0">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>       
-
+        
         <footer class="container footer-container mt-auto">
 
             <div class="row">
-                <h2 class="col-12 text-center">
+                <h2 class="col-12 text-center" style="font-family: Gloria Hallelujah">
                     "The important thing is not how long you live. It’s what you accomplish with your life."
                 </h2>
             </div>      
             <div class="row justify-content-center">
                 <div class="col-2 align-self-center">
-                    Find me on:
+                    <u>Find me on:</u>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -109,23 +102,3 @@
 
 </html>
 
-<!-- <div class="container" id="modal-container">
-    <div class="row">
-        <div class="col">
-            <ul class="list-group pokemon-list list-unstyled flex-row flex-wrap w-100" data-toggle="modal" data-target="#pokemonModal"></ul>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="pokemonModel" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">  
-                <h5 class="modal-title" id="pokemonModalLabel"></h5>
-                <div class="modal-body"></div> 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>  
-    </div>
-</div> -->
