@@ -2,7 +2,7 @@
 ## **About the Project**
 I created a small web application with HTML, CSS, and Javascript that loads data from an external API and enables the viewing of data points in detail. So basically, it will display a list of different pokemons that will, once clicked upon, show some of the pokemon characteristics.<br /><br />
 ### **Built with**
-The project was created by using the follow:
+The project was created by using the following:
 - HTML
 - CSS
 - JavaScript
